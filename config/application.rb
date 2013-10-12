@@ -21,9 +21,9 @@ module Crowdpowered
     # config.i18n.default_locale = :de
 
     ActionMailer::Base.smtp_settings = {
-      :user_name => 'sendgridusername',
-      :password => 'sendgridpassword',
-      :domain => 'yourdomain.com',
+      :user_name => 'jdlombardozzi',
+      :password => '9X0Ag5ogL2tYIbc',
+      :domain => 'crowdpowered.us',
       :address => 'smtp.sendgrid.net',
       :port => 587,
       :authentication => :plain,
