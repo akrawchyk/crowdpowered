@@ -26,9 +26,9 @@
         = label_tag :time
         = time_field_tag :time, (Time.now + 1.hour).strftime('%l:00 %p').lstrip, class: 'js-pickatime'
     .row
-    g .large-12.columns
+      .large-12.columns
         = f.label :website
-        = f.text_field :website
+        = f.url_field :website
     .row
       .large-12.columns
         = f.label :description
