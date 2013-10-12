@@ -1,4 +1,6 @@
 Crowdpowered::Application.routes.draw do
+  resources :events
+
   resources :users
 
   root 'static_pages#home'
