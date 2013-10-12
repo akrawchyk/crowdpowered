@@ -20,4 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  base_title: 'Crowdpowered'
+  activerecord:
+    models:
+      event: Event
+      user: User
+    attributes:
+      user:
+        login: Email
+    errors:
+      messages:
+        blank: Field cannot be empty
+  base_title: CrowdPowered

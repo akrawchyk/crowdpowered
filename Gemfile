@@ -52,7 +52,6 @@ gem 'mysql2'
 gem 'acts_as_commentable' # Comments system
 gem 'geocoder' # Location services
 gem 'thumbs_up' # Eventing upvoting
-
-
 gem 'valid_email' # Email format validator
 gem 'sendgrid' # Email system
+gem 'pickadate-rails', '~> 1.2.2'

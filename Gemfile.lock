@@ -71,6 +71,8 @@ GEM
     modernizr-rails (2.6.2.3)
     multi_json (1.8.1)
     mysql2 (0.3.13)
+    pickadate-rails (1.2.2)
+      railties (>= 3.1.0)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -146,6 +148,7 @@ DEPENDENCIES
   jquery-rails
   modernizr-rails (~> 2.6.2.3)
   mysql2
+  pickadate-rails (~> 1.2.2)
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
   sdoc

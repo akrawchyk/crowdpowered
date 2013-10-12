@@ -11,5 +11,6 @@
 
 @import "foundation_and_overrides";
 
-@import "static_pages/home";
-@import "static_pages/help";
+@import "app/base";
+@import "app/header";
+@import "app/footer";

@@ -6,26 +6,37 @@
         - @user.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :first_name
-    = f.text_field :first_name
-  .field
-    = f.label :last_name
-    = f.text_field :last_name
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :phone_number
-    = f.number_field :phone_number
-  .field
-    = f.label :twitter_handle
-    = f.text_field :twitter_handle
-  .field
-    = f.label :facebook_handle
-    = f.text_field :facebook_handle
-  .field
-    = f.label :zipcode
-    = f.number_field :zipcode
-  .actions
-    = f.submit 'Save'
+  %fieldset
+    %legend User
+
+    .row
+      .large-12.columns
+        = f.label :first_name
+        = f.text_field :first_name
+    .row
+      .large-12.columns
+        = f.label :last_name
+        = f.text_field :last_name
+    .row
+      .large-12.columns
+        = f.label :email
+        = f.text_field :email
+    .row
+      .large-12.columns
+        = f.label :phone_number
+        = f.number_field :phone_number
+    .row
+      .large-12.columns
+        = f.label :twitter_handle
+        = f.text_field :twitter_handle
+    .row
+      .large-12.columns
+        = f.label :facebook_handle
+        = f.text_field :facebook_handle
+    .row
+      .large-12.columns
+        = f.label :zipcode
+        = f.number_field :zipcode
+    .row
+      .large-12.columns.actions
+        = f.submit 'Save', class: 'button'

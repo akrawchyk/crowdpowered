@@ -6,20 +6,29 @@
         - @event.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :deadline
-    = f.datetime_select :deadline
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :website
-    = f.text_area :website
-  .field
-    = f.label :properties
-    = f.text_area :properties
-  .actions
-    = f.submit 'Save'
+  %fieldset
+    %legend Event
+
+    .row
+      .large-12.columns
+        = f.label :name
+        = f.text_field :name
+    .row
+      .large-12.columns
+        = f.label :deadline
+        = f.text_field :deadline
+    .row
+      .large-12.columns
+        = f.label :description
+        = f.text_area :description
+    .row
+      .large-12.columns
+        = f.label :website
+        = f.text_area :website
+    .row
+      .large-12.columns
+        = f.label :properties
+        = f.text_area :properties
+    .row
+      .large-12.columns
+        = f.submit 'Save', class: 'button'
