@@ -3,6 +3,11 @@
   = render 'head'
   %body{ class: controller.controller_name }
     = render 'header'
+
+    - flash.each do |name, msg|
+      %div
+        %p{ class: name }= msg
+
     = yield
     = render 'footer'
     = render 'javascripts'

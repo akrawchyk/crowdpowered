@@ -1,4 +1,6 @@
 = form_for @event do |f|
+  = hidden_field :event, :deadline
+
   - if @event.errors.any?
     #error_explanation
       %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
@@ -15,20 +17,22 @@
         = f.text_field :name
     .row
       .large-12.columns
-        = f.label :deadline
-        = f.text_field :deadline
+        = label_tag :date
+        = date_field_tag :date, Date.today.strftime('%e %B, %Y'), class: 'js-pickadate'
+        -# = f.label :deadline
+        -# = f.text_field :deadline
+    .row
+      .large-12.columns
+        = label_tag :time
+        = time_field_tag :time, (Time.now + 1.hour).strftime('%l:00 %p').lstrip, class: 'js-pickatime'
+    .row
+    g .large-12.columns
+        = f.label :website
+        = f.text_field :website
     .row
       .large-12.columns
         = f.label :description
         = f.text_area :description
-    .row
-      .large-12.columns
-        = f.label :website
-        = f.text_area :website
-    .row
-      .large-12.columns
-        = f.label :properties
-        = f.text_area :properties
     .row
       .large-12.columns
         = f.submit 'Save', class: 'button'

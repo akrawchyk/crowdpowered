@@ -1,27 +1,29 @@
-%p#notice= notice
+.row
+  .large-12.columns
+    %p#notice= notice
 
-%p
-  %b First name:
-  = @user.first_name
-%p
-  %b Last name:
-  = @user.last_name
-%p
-  %b Email:
-  = @user.email
-%p
-  %b Phone number:
-  = @user.phone_number
-%p
-  %b Twitter handle:
-  = @user.twitter_handle
-%p
-  %b Facebook handle:
-  = @user.facebook_handle
-%p
-  %b Zipcode:
-  = @user.zipcode
+    %p
+      %b First name:
+      = @user.first_name
+    %p
+      %b Last name:
+      = @user.last_name
+    %p
+      %b Email:
+      = @user.email
+    %p
+      %b Phone number:
+      = @user.phone_number
+    %p
+      %b Twitter handle:
+      = @user.twitter_handle
+    %p
+      %b Facebook handle:
+      = @user.facebook_handle
+    %p
+      %b Zipcode:
+      = @user.zipcode
 
-= link_to 'Edit', edit_user_path(@user)
-\|
-= link_to 'Back', users_path
+    = link_to 'Edit', edit_user_path(@user)
+    \|
+    = link_to 'Back', users_path

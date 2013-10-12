@@ -1,21 +1,24 @@
-%p#notice= notice
+-# 1000x192
+.row
+  .large-12.columns
+    %p#notice= notice
 
-%p
-  %b Name:
-  = @event.name
-%p
-  %b Deadline:
-  = @event.deadline
-%p
-  %b Description:
-  = @event.description
-%p
-  %b Website:
-  = @event.website
-%p
-  %b Properties:
-  = @event.properties
+    %p
+      %b Name:
+      = @event.name
+    %p
+      %b Deadline:
+      = @event.deadline
+    %p
+      %b Description:
+      = @event.description
+    %p
+      %b Website:
+      = @event.website
+    %p
+      %b Properties:
+      = @event.properties
 
-= link_to 'Edit', edit_event_path(@event)
-\|
-= link_to 'Back', events_path
+    = link_to 'Edit', edit_event_path(@event)
+    \|
+    = link_to 'Back', events_path

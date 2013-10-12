@@ -55,3 +55,4 @@ gem 'thumbs_up' # Eventing upvoting
 gem 'valid_email' # Email format validator
 gem 'sendgrid' # Email system
 gem 'pickadate-rails', '~> 1.2.2'
+gem 'devise', '~> 3.1.1'
