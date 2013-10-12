@@ -49,3 +49,5 @@ gem 'zurb-foundation', '~> 4.3.2'
 gem 'haml-rails', '~> 0.4'
 gem 'modernizr-rails', '~> 2.6.2.3'
 gem 'mysql2'
+gem 'acts_as_commentable' # Comments system
+gem 'geocoder' # Location services
