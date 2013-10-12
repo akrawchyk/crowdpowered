@@ -1,7 +1,9 @@
 %header.header{ role: 'banner' }
   %nav.top-bar
     %ul.title-area
-      %li.name Crowdpowered
+      %li.name
+        %h1
+          = link_to(I18n::t(:base_title), root_path)
     %section.top-bar-section
       %ul.right
         %li
