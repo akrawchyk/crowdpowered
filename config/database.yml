@@ -5,5 +5,4 @@ development:
   database: crowdpowered
   pool: 5
   username: root
-  password: toor
   socket: /tmp/mysql.sock
