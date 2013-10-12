@@ -51,3 +51,8 @@ gem 'modernizr-rails', '~> 2.6.2.3'
 gem 'mysql2'
 gem 'acts_as_commentable' # Comments system
 gem 'geocoder' # Location services
+gem 'thumbs_up' # Eventing upvoting
+
+
+gem 'valid_email' # Email format validator
+gem 'sendgrid' # Email system
