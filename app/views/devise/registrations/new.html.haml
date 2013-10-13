@@ -1,31 +1,31 @@
-.row
-  .large-12.columns
+.row.bglite
+  .large-6.columns
     %h2 Sign up
 
     = form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
       = devise_error_messages!
-      %fieldset
-        %legend Sign up
 
+      %fieldset
+        %legend Account Details
         .row
           .large-12.columns
             = f.label :email
             = f.email_field :email, autofocus: true
-
         .row
           .large-12.columns
             = f.label :password
             = f.password_field :password
-
         .row
           .large-12.columns
             = f.label :password_confirmation
             = f.password_field :password_confirmation
-
         .row
           .large-12.columns.actions
             = f.submit "Sign up", class: 'button'
 
-.row
-  .large-12.columns
+  .large-6.columns
+    %h3 Why sign up?
+    %p Coordinate, collaborate, celebrate! CrowdPowered connects you with your community and local businesses to provide help for local causes. Become the catalyst in your community and be the key to your citys future!
+
+  .large-6.columns
     = render "devise/shared/links"

@@ -3,10 +3,11 @@
 
   - if @event.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
-      %ul
+      %ul.no-bullet
         - @event.errors.full_messages.each do |msg|
-          %li= msg
+          %li
+            .alert-box.alert
+              = msg
 
   %fieldset
     %legend Event
@@ -14,15 +15,15 @@
     .row
       .large-12.columns
         = f.label :name
-        = f.text_field :name
+        = f.text_field :name, required: true
     .row
       .large-12.columns
         = label_tag :date
-        = date_field_tag :date, Date.today.strftime('%e %B, %Y'), class: 'js-pickadate'
+        = date_field_tag :date, Date.today.strftime('%e %B, %Y'), class: 'js-pickadate', required: true
     .row
       .large-12.columns
         = label_tag :time
-        = time_field_tag :time, (Time.now + 1.hour).strftime('%l:00 %p').lstrip, class: 'js-pickatime'
+        = time_field_tag :time, (Time.now + 1.hour).strftime('%l:00 %p').lstrip, class: 'js-pickatime', required: true
     .row
       .large-12.columns
         = f.label :website
@@ -30,7 +31,7 @@
     .row
       .large-12.columns
         = f.label :description
-        = f.text_area :description
+        = f.text_area :description, required: true
     .row
       .large-12.columns
         = f.submit 'Create', class: 'button'

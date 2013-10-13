@@ -5,4 +5,8 @@
 .masthead {
   height: 192px;
   width: 100%;
+
+  &.home {
+    background-image: image-url('home_masthead.jpg');
+  }
 }

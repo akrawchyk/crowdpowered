@@ -2,12 +2,22 @@
   %nav.top-bar
     %ul.title-area
       %li.name
-        = link_to root_path, class: ['brand', 'readable-shadow'] do
+        = link_to root_path, class: 'brand' do
           = image_tag('logo_small.png', alt: 'small logo')
           = I18n::t(:base_title)
     %section.top-bar-section
       %ul.right
         %li
-          = link_to('Users', users_path, class: 'readable-shadow')
+          = link_to 'Users', users_path
         %li
-          = link_to('Events', events_path, class: 'readable-shadow')
+          = link_to 'Events', events_path
+        - if user_signed_in?
+          %li
+            = link_to user_path(current_user) do
+              %i.fi-torso
+              My Account
+          %li
+          = link_to 'Sign Out', destroy_user_session_path
+        - else
+          %li
+            = link_to 'Sign In', new_user_session_path

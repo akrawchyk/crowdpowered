@@ -4,6 +4,8 @@
 
     = render 'form'
 
-    = link_to 'Show', @event
-    \|
-    = link_to 'Back', events_path
+    .row
+      .large-6.columns
+        = link_to 'Show', @event
+      .large-6.columns
+        = link_to 'Back', events_path
