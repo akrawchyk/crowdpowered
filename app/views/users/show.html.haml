@@ -28,6 +28,14 @@
   .large-6.columns
     %h3 Need to change something?
     = link_to 'Edit', edit_user_path(@user), class: ['button', 'secondary', 'small']
+    %div.events
+      %h4 Projects
+      - if @user.events.count > 1
+        %ul
+        - @user.events.each do |event|
+          %li link_to "/events/#{event.id}/show"
+      - else
+        %p You have no projects you are involved in yet
 
 .row.bglite
   .large-12.columns
