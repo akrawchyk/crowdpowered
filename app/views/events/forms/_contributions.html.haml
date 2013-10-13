@@ -4,7 +4,7 @@
       .cp-volunteer
         %p
           %span= "#{user.last_name}, #{user.first_name} <#{user.email}>"
-= form_for [@event, @event.users.new], :url => post_path(@post) do |f|
+= form_for [@event, @event.users.new] do |f|
   %fieldset
     %legend Add volunteer
     .row
