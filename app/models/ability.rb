@@ -29,6 +29,6 @@ class Ability
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
-    user ||= User.new # guest user (not logged in)
+    # user ||= User.new # guest user (not logged in)
   end
 end

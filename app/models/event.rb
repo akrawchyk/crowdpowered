@@ -4,6 +4,7 @@ class Event < ActiveRecord::Base
   validates :deadline, presence: true
   validates :description, presence: true
   validates :website, presence: false
+  validates :zipcode, presence: true
 
   # Plugins/Gems
   acts_as_commentable

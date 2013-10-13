@@ -26,12 +26,16 @@
         = time_field_tag :time, (Time.now + 1.hour).strftime('%l:00 %p').lstrip, class: 'js-pickatime', required: true
     .row
       .large-12.columns
-        = f.label :website
-        = f.url_field :website
+        = f.label :zipcode
+        = f.number_field :zipcode, required: true
     .row
       .large-12.columns
         = f.label :description
         = f.text_area :description, required: true
+    .row
+      .large-12.columns
+        = f.label :website
+        = f.url_field :website
     .row
       .large-12.columns
         = f.submit 'Create', class: 'button'
