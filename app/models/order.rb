@@ -20,7 +20,7 @@ class Order < ActiveRecord::Base
   attr_accessor :return_url, :cancel_url, :payment_method, :credit_card
 
   def approve_url
-    raise payment.links.find{|link| link.method == "REDIRECT" }.try(:href).inspect
+    payment.links.find{|link| link.method == "REDIRECT" }.try(:href)
   end
 
   def create_credit_card

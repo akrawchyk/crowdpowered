@@ -16,7 +16,7 @@ class Payment < PayPal::SDK::REST::Payment
 
   def add_payment_method(order)
     user = order.user
-    raise order.credit_card.inspect
+    #raise order.credit_card.inspect
     if order.payment_method == "credit_card" and order.credit_card_id
       self.payer.payment_method = "credit_card"
       self.payer.funding_instruments = {
@@ -46,7 +46,7 @@ class Payment < PayPal::SDK::REST::Payment
        :cancel_url => order.cancel_url.sub(/:order_id/, order.id.to_s)
      }
 
-    raise self.inspect
+    #raise self.inspect
   end
 
 end

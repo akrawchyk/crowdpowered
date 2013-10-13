@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   # Validations
   validates :first_name, presence: false
   validates :last_name, presence: false
-  #include ActiveModel::Validations
+
   validates :email, presence: true, :email => true
   validates :phone_number, presence: false
   validates :zipcode, presence: false
@@ -24,7 +24,13 @@ class User < ActiveRecord::Base
   # Associations
   has_many :events, through: :event_users
   has_many :event_users
+
+  #has_many :events, through: :event_volunteers
+  #has_many :event_volunteers
+
   has_many :orders
+
+
 
   # Attributes
   #attr_accessible :credit_card

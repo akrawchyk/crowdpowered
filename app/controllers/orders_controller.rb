@@ -15,8 +15,8 @@ class OrdersController < ApplicationController
     @order = current_user.orders.new(order_params)
     @order.event = @event
 
-    @order.credit_card = CreditCard.new(credit_card_params)
-    raise @order.credit_card..inspect
+    #@order.credit_card = CreditCard.new(credit_card_params)
+    #raise @order.credit_card..inspect
 
     @order.return_url = event_order_execute_url(@event, :order_id => ':order_id')
     @order.cancel_url = event_order_cancel_url(@event, :order_id => ':order_id')

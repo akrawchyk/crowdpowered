@@ -27,7 +27,7 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
-    @user = @event.users.new
+    #@user = @event.users.new
   end
 
   # POST /events
@@ -46,6 +46,15 @@ class EventsController < ApplicationController
       end
     end
   end
+
+  def create_volunteer
+    user = User.new({:first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :email => params[:user][:email]})
+    user.skip_confirmation!
+    user.save!
+
+    Event.new(event_params).users << user
+  end
+
 
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json

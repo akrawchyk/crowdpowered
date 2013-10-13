@@ -1,16 +1,23 @@
 %ul.no-bullet
-  %li
-    .cp-volunteer
-      %p List volunteers here
-= form_tag @event do |f|
+  - @event.users.each do |user|
+    %li
+      .cp-volunteer
+        %p
+          %span= "#{user.last_name}, #{user.first_name} <#{user.email}>"
+= form_for [@event, @event.users.new], :url => post_path(@post) do |f|
   %fieldset
     %legend Add volunteer
     .row
+      .large-6.columns
+        = f.label :first_name
+        = f.text_field :first_name
+      .large-6.columns
+        = f.label :last_name
+        = f.text_field :last_name
+    .row
       .large-12.columns
-        = label_tag 'Volunteer name'
-        = text_field_tag :volunteer_name
-        = label_tag 'Volunteer email'
-        = email_field_tag :volunteer_email
+        = f.label :email
+        = f.email_field :email
   .row
     .large-12.columns
       = submit_tag 'Add', class: 'button right small secondary'
