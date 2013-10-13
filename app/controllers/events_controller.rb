@@ -26,6 +26,8 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    @event = Event.find(params[:id])
+    @user = @event.users.new
   end
 
   # POST /events
@@ -67,6 +69,10 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url }
       format.json { head :no_content }
     end
+  end
+
+  def add_user
+    @event = Event.find(params[:id])
   end
 
   private

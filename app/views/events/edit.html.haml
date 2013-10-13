@@ -6,11 +6,12 @@
     %h3.subheading= @event.description
 
   .large-6.columns
-    = render 'form_edit'
-    .row
-      .large-6.columns
-        = link_to 'Show', @event
-      .large-6.columns
-        = link_to 'Back', events_path
-
+    = render 'events/forms/edit'
   .large-6.columns
+    = render 'events/forms/contributions'
+
+.row.bglite
+  .large-6.columns
+    = link_to 'Show', @event
+  .large-6.columns
+    = link_to 'Back', events_path

@@ -1,36 +1,33 @@
-.row
-  .masthead.event
+- provide(:title, 'Place Order')
 
 .row.bglite
-  .large-6.columns
-    %h2 Contribute to '#{@event.name}'
+  .large-12.columns
+    %h2 Place Order
 
     = form_for [@event, @order] do |f|
       - if @event.errors.any?
         #error_explanation
-          %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
           %ul
             - @event.errors.full_messages.each do |msg|
               %li= msg
       %fieldset
-        %legend Donation
+        %legend Order details
         .row
           .large-12.columns
             = f.label :amount
-            = f.text_field :amount, :required => true
+            = f.text_field :amount, required: true
         .row
           .large-12.columns
             = f.label :description
-            = f.text_field :description, :required => false
-      %fieldset
-        %legend Pay with PayPal
-        = f.button 'Paypal', :type => :submit, :name => "order[payment_method]", :value => 'paypal', :class => "btn btn-primary"
-      %fieldset
-        %legend Pay with credit or debit card
-        .row
-          .large-12.columns
+            = f.text_field :description, required: false
+      .row
+        .large-6.columns
+          %fieldset
+            %legend Pay with PayPal
+            = f.button 'Paypal', type: :submit, name: "order[payment_method]", value: 'paypal', class: 'button secondary'
+        .large-6.columns
+          %fieldset
+            %legend Pay with credit or debit card
             = f.fields_for :credit_card, @order.credit_card do |cc|
-              = render "orders/credit_card", :f => cc
-            .form-actions
-              = f.button 'Place Order', :type => :submit, :name => "order[payment_method]", :value => 'credit_card', :class => "btn btn-primary"
-
+              = render "orders/credit_card", f: cc
+              = f.button 'Place Order', type: :submit, name: "order[payment_method]", value: 'credit_card', class: 'button'

@@ -6,8 +6,13 @@
   background-image: image-url('event_masthead.png');
 }
 
-.cp-event {
+.events .cp-feature {
+  margin-top: 1em;
+  line-height: 50px;
 
+  i {
+    margin-right: 15px;
+  }
 }
 
 .cp-event-status {

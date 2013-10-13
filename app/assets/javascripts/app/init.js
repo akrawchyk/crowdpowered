@@ -10,4 +10,3 @@ $('input.js-pickadate').pickadate({
 $('input.js-pickatime').pickatime({
 	formatSubmit: 'HH:i:00'
 });
-// 2011-10-10T14:48:00

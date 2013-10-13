@@ -3,7 +3,9 @@ Crowdpowered::Application.routes.draw do
 
   resources :events do
     resources :orders
+    post '/add_user', action: :add_user
   end
+
   resources :comments, :only => [:create, :destroy]
 
   resources :users
