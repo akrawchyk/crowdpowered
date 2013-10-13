@@ -1,31 +1,36 @@
-%h2 Place Order
+.row
+  .masthead.event
 
-= form_for [@event, @order] do |f|
-  - if @event.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
-      %ul
-        - @event.errors.full_messages.each do |msg|
-          %li= msg
-  %fieldset
-    %legend Donation
-    .row
-      .large-12.columns
-        = f.label :amount
-        = f.text_field :amount, :required => true
-    .row
-      .large-12.columns
-        = f.label :description
-        = f.text_field :description, :required => false
-  %fieldset
-    %legend Pay with PayPal
-    = f.button 'Paypal', :type => :submit, :name => "order[payment_method]", :value => 'paypal', :class => "btn btn-primary"
-  %fieldset
-    %legend Pay with credit or debit card
-    .row
-      .large-12.columns
-        = f.fields_for :credit_card, @order.credit_card do |cc|
-          = render "orders/credit_card", :f => cc
-        .form-actions
-          = f.button 'Place Order', :type => :submit, :name => "order[payment_method]", :value => 'credit_card', :class => "btn btn-primary"
+.row.bglite
+  .large-6.columns
+    %h2 Contribute to '#{@event.name}'
+
+    = form_for [@event, @order] do |f|
+      - if @event.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
+          %ul
+            - @event.errors.full_messages.each do |msg|
+              %li= msg
+      %fieldset
+        %legend Donation
+        .row
+          .large-12.columns
+            = f.label :amount
+            = f.text_field :amount, :required => true
+        .row
+          .large-12.columns
+            = f.label :description
+            = f.text_field :description, :required => false
+      %fieldset
+        %legend Pay with PayPal
+        = f.button 'Paypal', :type => :submit, :name => "order[payment_method]", :value => 'paypal', :class => "btn btn-primary"
+      %fieldset
+        %legend Pay with credit or debit card
+        .row
+          .large-12.columns
+            = f.fields_for :credit_card, @order.credit_card do |cc|
+              = render "orders/credit_card", :f => cc
+            .form-actions
+              = f.button 'Place Order', :type => :submit, :name => "order[payment_method]", :value => 'credit_card', :class => "btn btn-primary"
 
