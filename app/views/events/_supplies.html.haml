@@ -1,10 +1,9 @@
 .cp-event-supplies
   %h3.subheader Supplies
-  %ul.cp-event-supplies-list 
-  %li
-    .cp-event-supply
-      shovel
-  %li
-    .cp-event-supply
-      water bottles
-
+  %ul.cp-event-supplies-list
+    - @event.supplies.each do |supply|
+      %li
+        .cp-supply
+          %span= supply.name
+          %span $#{supply.price}
+          %span x #{supply.quantity} unit(s)

@@ -33,3 +33,12 @@
 .h1 {
   @extend h1;
 }
+
+.lead {
+  @extend h5;
+  font-weight: 300;
+}
+
+small {
+  font-size: 80%;
+}

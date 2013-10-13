@@ -1,25 +1,25 @@
 .cp-event-card
   .cp-event-meta
     %h1= @event.name
-    %p
-      = time_tag @event.deadline, :format=>'%e %B, %Y at %l:%M%p'
+    %p.lead= @event.description
+    %p= time_tag @event.deadline, :format=>'%e %B, %Y at %l:%M%p'
   .cp-event-status
     .row
       .large-4.columns
         .cp-event-status-item
           %h4.title Supporters
           %div
-            %i.fi-torsos-all.large
-            0
+            %i.fi-torsos-all.large.left
+            %p 0
       .large-4.columns
         .cp-event-status-item
           %h4.title Supplies
           %div
-            %i.fi-wrench.large
-            0
+            %i.fi-wrench.large.left
+            %p= @event.supplies.length
       .large-4.columns
         .cp-event-status-item
           %h4.title Funds
           %div
-            %i.fi-dollar.large
-            0
+            %i.fi-dollar.large.left
+            %p 0

@@ -5,7 +5,7 @@
         = image_tag('//placehold.it/50/50')
     .large-10.columns
       .cp-comment-content
-        %p
+        %small
           = time_tag comment.created_at, :format=>'%e %B, %Y at %l:%M%p'
           | #{comment.user.last_name}, #{comment.user.first_name}
         %p= comment.comment

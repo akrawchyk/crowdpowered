@@ -37,6 +37,14 @@
   i {
     color: $gray-dark;
   }
+
+  p {
+    color: $gray-dark;
+    text-align: center;
+    font-family: $fs-headings;
+    font-size: em-calc(32);
+    margin-bottom: 25px;
+  }
 }
 
 .cp-event-cta {

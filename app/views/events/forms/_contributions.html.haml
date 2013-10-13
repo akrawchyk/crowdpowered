@@ -15,12 +15,17 @@
     .large-12.columns
       = submit_tag 'Add', class: 'button right small secondary'
 
-%ul
-  - @event.supplies.each do |supply|
-    %li
-      %span= supply.name
-      %span= "$#{supply.price}"
-      %span= " x #{supply.quantity} unit(s)"
+- if @event.supplies.blank?
+  %p.empty No supplies added yet
+- else
+  %h5
+  %ul.no-bullet
+    - @event.supplies.each do |supply|
+      %li
+        .cp-supply
+          %span= supply.name
+          %span $#{supply.price}
+          %span x #{supply.quantity} unit(s)
 = form_for [@event, @event.supplies.new] do |f|
   %fieldset
     %legend Add supplies
@@ -32,4 +37,6 @@
         = f.number_field :quantity
         = f.label :price
         = f.number_field :price
-        = f.button 'Add', class: 'button expand small secondary'
+  .row
+    .large-12.columns
+      = f.submit 'Add', class: 'button right small secondary'
