@@ -1,10 +1,11 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
 
   # GET /events
   # GET /events.json
   def index
+    #raise current_user.inspect
     @events = Event.all
   end
 
