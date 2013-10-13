@@ -2,8 +2,6 @@
 
 .row.bglite
   .large-6.columns
-    %p#notice= notice
-
     %h1 My Account
 
     %p
@@ -30,6 +28,7 @@
   .large-6.columns
     %h3 Need to change something?
     = link_to 'Edit', edit_user_path(@user), class: ['button', 'secondary', 'small']
+
 .row.bglite
   .large-12.columns
     %p

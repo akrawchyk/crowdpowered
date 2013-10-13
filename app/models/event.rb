@@ -1,4 +1,7 @@
 class Event < ActiveRecord::Base
+  geocoded_by :zipcode
+  after_validation :geocode
+
   # Validations
   validates :name, presence: true
   validates :deadline, presence: true

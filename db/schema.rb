@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131013102235) do
+ActiveRecord::Schema.define(version: 20131013114639) do
 
   create_table "comments", force: true do |t|
     t.string   "title",            limit: 50, default: ""
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20131013102235) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "zipcode"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "orders", force: true do |t|
@@ -67,7 +69,7 @@ ActiveRecord::Schema.define(version: 20131013102235) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.integer  "phone_number"
+    t.string   "phone_number"
     t.string   "twitter_handle"
     t.string   "facebook_handle"
     t.integer  "zipcode"
@@ -84,6 +86,8 @@ ActiveRecord::Schema.define(version: 20131013102235) do
     t.string   "last_sign_in_ip"
     t.string   "credit_card_id"
     t.string   "credit_card_description"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

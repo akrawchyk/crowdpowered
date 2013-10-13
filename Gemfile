@@ -48,7 +48,7 @@ gem 'haml-rails', '~> 0.4'
 gem 'modernizr-rails', '~> 2.6.2.3'
 gem 'mysql2'
 gem 'acts_as_commentable' # Comments system
-gem 'geocoder' # Location services
+gem 'geocoder', '~> 1.1.8' # Location services
 gem 'thumbs_up' # Eventing upvoting
 gem 'valid_email' # Email format validator
 gem 'sendgrid' # Email system
