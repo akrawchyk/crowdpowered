@@ -55,3 +55,4 @@ gem 'sendgrid' # Email system
 gem 'pickadate-rails', '~> 1.2.2'
 gem 'devise', '~> 3.1.1'
 gem 'cancan' # User roles
+gem 'paypal-sdk-rest'

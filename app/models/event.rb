@@ -12,4 +12,5 @@ class Event < ActiveRecord::Base
   # Associations
   has_many :users, through: :event_users
   has_many :event_users
+  has_many :orders
 end

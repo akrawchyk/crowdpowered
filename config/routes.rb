@@ -1,7 +1,9 @@
 Crowdpowered::Application.routes.draw do
   devise_for :users
 
-  resources :events
+  resources :events do
+    resources :orders
+  end
 
   resources :users
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131013014044) do
+ActiveRecord::Schema.define(version: 20131013050045) do
 
   create_table "comments", force: true do |t|
     t.string   "title",            limit: 50, default: ""
@@ -44,6 +44,24 @@ ActiveRecord::Schema.define(version: 20131013014044) do
     t.datetime "updated_at"
   end
 
+  create_table "orders", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.string   "payment_id"
+    t.string   "state"
+    t.string   "amount"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+
+  create_table "sponsors", force: true do |t|
+    t.integer "event_id"
+    t.string  "name"
+  end
+
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -54,15 +72,17 @@ ActiveRecord::Schema.define(version: 20131013014044) do
     t.integer  "zipcode"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "encrypted_password",      default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",           default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "credit_card_id"
+    t.string   "credit_card_description"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
