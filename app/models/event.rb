@@ -8,4 +8,8 @@ class Event < ActiveRecord::Base
   # Plugins/Gems
   acts_as_commentable
   acts_as_voteable
+
+  # Associations
+  has_many :users, through: :event_users
+  has_many :event_users
 end
