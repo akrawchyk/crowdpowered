@@ -10,14 +10,21 @@
         = email_field_tag :volunteer_email
         = button_tag 'Add', class: 'button expand small secondary'
 
+%ul
+  - @event.supplies.each do |supply|
+    %li
+      %span= supply.name
+      %span= "$#{supply.price}"
+      %span= " x #{supply.quantity} unit(s)"
+= form_for [@event, @event.supplies.new] do |f|
   %fieldset
     %legend Supplies
     .row
       .large-12.columns
-        = label_tag 'Item Name'
-        = text_field_tag :item_name
-        = label_tag 'Quantity Needed'
-        = number_field_tag :quantity_needed
-        = label_tag 'Item Price'
-        = number_field_tag :item_price
-        = button_tag 'Add', class: 'button expand small secondary'
+        = f.label :name
+        = f.text_field :name
+        = f.label :quantity
+        = f.number_field :quantity
+        = f.label :price
+        = f.number_field :price
+        = f.button 'Add', class: 'button expand small secondary'

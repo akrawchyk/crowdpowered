@@ -2,6 +2,7 @@ Crowdpowered::Application.routes.draw do
   devise_for :users
 
   resources :events do
+    resources :supplies
     resources :orders do
       post '/add_user', action: :add_user
       get :execute
