@@ -22,4 +22,7 @@
           %h4.title Funds
           %div
             %i.fi-dollar.large.left
-            %p 0
+            - if @event.orders.count >0
+              %p= @event.orders.sum(:amount)
+            - else
+              %p 0
