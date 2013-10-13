@@ -2,10 +2,9 @@
   %nav.top-bar
     %ul.title-area
       %li.name
-        %h1.brand
-          = link_to(root_path) do
-            = image_tag('logo_small.png', alt: 'small logo')
-            = I18n::t(:base_title)
+        = link_to root_path, class: 'brand' do
+          = image_tag('logo_small.png', alt: 'small logo')
+          = I18n::t(:base_title)
     %section.top-bar-section
       %ul.right
         %li

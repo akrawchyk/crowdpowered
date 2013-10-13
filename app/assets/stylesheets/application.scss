@@ -9,14 +9,16 @@
  * compiled file, but it's generally better to create a new file per style scope.
  */
 
+@import "app/variables";
 @import "foundation_and_overrides";
+@import "foundation-icons";
 
 @import "pickadate/default";
 @import "pickadate/default.date";
 @import "pickadate/default.time";
 
-@import "app/variables";
 @import "app/base";
 @import "app/type";
 @import "app/header";
+@import "app/content";
 @import "app/footer";

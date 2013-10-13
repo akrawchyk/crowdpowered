@@ -1,8 +1,24 @@
 - provide(:title, 'Home')
 
-.row
+.row.bglite
   .large-12.columns
-    %h1 Home
+    %h1 Community powered projects
 
+  .large-3.columns
+    .cp-feature
+      %i.fi-trees.large
+      Beautify your area!
+  .large-3.columns
+    .cp-feature
+      %i.fi-paint-bucket.large
+      Put fresh coat of paint on it!
+  .large-3.columns
+    .cp-feature
+      %i.fi-torsos-all.large
+      Connect with your community!
+  .large-3.columns
+    .cp-feature
+      %i.fi-key.large
+      Be the key to change in your community!
   .large-12.columns
     = link_to('Create event', new_event_path, class: ['large', 'button', 'expand'])

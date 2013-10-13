@@ -16,5 +16,7 @@
 //= require pickadate/picker
 //= require pickadate/picker.date
 //= require pickadate/picker.time
-//= require_tree .
-
+//
+//= require app/plugins
+//= require app/init
+//= require_tree ./app/

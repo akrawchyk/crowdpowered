@@ -53,6 +53,9 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    foundation-icons-sass-rails (3.0.0)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     fssm (0.2.10)
     geocoder (1.1.8)
     haml (4.0.3)
@@ -151,6 +154,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   compass-rails (~> 1.0.3)
   devise (~> 3.1.1)
+  foundation-icons-sass-rails (~> 3.0.0)
   geocoder
   haml-rails (~> 0.4)
   jquery-rails

@@ -43,6 +43,7 @@ end
 
 gem 'compass-rails', '~> 1.0.3'
 gem 'zurb-foundation', '~> 4.3.2'
+gem 'foundation-icons-sass-rails', '~> 3.0.0'
 gem 'haml-rails', '~> 0.4'
 gem 'modernizr-rails', '~> 2.6.2.3'
 gem 'mysql2'

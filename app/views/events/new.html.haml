@@ -1,7 +1,13 @@
 .row
-  .large-12.columns
-    %h1 New event
-
+  .masthead.event
+.row.bglite
+  .large-6.columns
+    %h1 Create a new event
     = render 'form'
 
-    = link_to 'Back', events_path
+  .large-6.columns
+    %h2 Pitch pitch pitch
+
+  .large-12.columns
+    %p
+      = link_to 'Back', events_path
