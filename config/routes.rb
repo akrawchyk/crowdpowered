@@ -4,6 +4,7 @@ Crowdpowered::Application.routes.draw do
   resources :events do
     resources :orders
   end
+  resources :comments, :only => [:create, :destroy]
 
   resources :users
 
