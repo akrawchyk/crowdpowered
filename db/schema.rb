@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 20131013014044) do
   add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
+  create_table "event_users", force: true do |t|
+    t.integer "event_id"
+    t.integer "user_id"
+    t.string  "role"
+  end
+
   create_table "events", force: true do |t|
     t.string   "name"
     t.datetime "deadline"
@@ -36,12 +42,6 @@ ActiveRecord::Schema.define(version: 20131013014044) do
     t.text     "properties"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "event_users", force: true do |t|
-    t.integer "event_id"
-    t.integer "user_id"
-    t.string  "role"
   end
 
   create_table "users", force: true do |t|
