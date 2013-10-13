@@ -19,13 +19,13 @@
         = f.text_field :description, :required => false
   %fieldset
     %legend Pay with PayPal
-    = link_to('PayPal', '#', class: 'button secondary')
+    = f.button 'Paypal', :type => :submit, :name => "order[payment_method]", :value => 'paypal', :class => "btn btn-primary"
   %fieldset
     %legend Pay with credit or debit card
     .row
       .large-12.columns
         = f.fields_for :credit_card, @order.credit_card do |cc|
           = render "orders/credit_card", :f => cc
+        .form-actions
+          = f.button 'Place Order', :type => :submit, :name => "order[payment_method]", :value => 'credit_card', :class => "btn btn-primary"
 
-    .form-actions
-      = submit_tag "Place Order", :class => "btn btn-primary"

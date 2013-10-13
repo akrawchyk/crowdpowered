@@ -4,7 +4,6 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    #raise current_user.inspect
     @events = Event.all
   end
 

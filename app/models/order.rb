@@ -1,13 +1,15 @@
 class Order < ActiveRecord::Base
+  # Associations
   belongs_to :user
   belongs_to :event
 
-  #attr_accessible :amount, :description, :state, :payment_method, :credit_card
+  # Validations
+  validates_presence_of :amount, :user_id, :event_id
 
-  validates_presence_of :amount, :description, :user_id, :event_id
-
+  # Filters
   after_create :create_payment
 
+  # Attributes
   attr_accessor :return_url, :cancel_url, :payment_method, :credit_card
 
   validate do

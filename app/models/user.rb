@@ -21,46 +21,47 @@ class User < ActiveRecord::Base
   # Associations
   has_many :events, through: :event_users
   has_many :event_users
+  has_many :orders
 
   # Attributes
   #attr_accessible :credit_card
   #
   #attr_accessor :credit_card
 
-  validate do
-    if need_credit_card? and credit_card.invalid?
-      errors.add :credit_card_id, "Validation error"
-    end
-  end
+  #validate do
+  #  if need_credit_card? and credit_card.invalid?
+  #    errors.add :credit_card_id, "Validation error"
+  #  end
+  #end
 
-  before_save :create_credit_card, :if => :need_credit_card?
+  #before_save :create_credit_card, :if => :need_credit_card?
 
-  def need_credit_card?
-    # credit_card_id.nil? or credit_card.present?
-    credit_card.present?
-  end
+  #def need_credit_card?
+  #  # credit_card_id.nil? or credit_card.present?
+  #  credit_card.present?
+  #end
 
-  def create_credit_card
-    credit_card.payer_id = self.email
-    if credit_card.create
-      self.credit_card_id = credit_card.id
-      self.credit_card_description = credit_card.description
-      true
-    else
-      errors.add :credit_card_id, "Validation error"
-      false
-    end
-  end
+  #def create_credit_card
+  #  credit_card.payer_id = self.email
+  #  if credit_card.create
+  #    self.credit_card_id = credit_card.id
+  #    self.credit_card_description = credit_card.description
+  #    true
+  #  else
+  #    errors.add :credit_card_id, "Validation error"
+  #    false
+  #  end
+  #end
 
-  def fetch_credit_card
-    @fetch_credit_card ||= credit_card_id && CreditCard.find(credit_card_id)
-  end
-
-  def credit_card
-    @credit_card ||= CreditCard.new
-  end
-
-  def credit_card=(hash)
-    @credit_card = CreditCard.new(hash)
-  end
+  #def fetch_credit_card
+  #  @fetch_credit_card ||= credit_card_id && CreditCard.find(credit_card_id)
+  #end
+  #
+  #def credit_card
+  #  @credit_card ||= CreditCard.new
+  #end
+  #
+  #def credit_card=(hash)
+  #  @credit_card = CreditCard.new(hash)
+  #end
 end

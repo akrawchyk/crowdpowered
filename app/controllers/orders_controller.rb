@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
   def index
     @orders = Event.find(params[:event_id]).orders.where(user: current_user).all( :limit => 10, :order => "id DESC" )
   end
@@ -11,8 +11,11 @@ class OrdersController < ApplicationController
   end
 
   def create
+    @event = Event.find(params[:event_id])
     @order = current_user.orders.build
     @order.attributes = params[:order]
+    @order.event = @event
+
     @order.return_url = order_execute_url(":order_id")
     @order.cancel_url = order_cancel_url(":order_id")
     if @order.payment_method and @order.save
