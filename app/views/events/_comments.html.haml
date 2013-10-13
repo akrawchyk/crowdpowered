@@ -4,15 +4,6 @@
     - unless @event.comments.empty?
       - @event.comments.each do |comment|
         = render 'comment', :comment => comment
-  - if current_user
-    = form_for @comment do |f|
-      = f.hidden_field :commentable_id, :value => @event.id
-      = f.hidden_field :commentable_type, :value => 'Event'
-      .row.cp-comment
-        .large-2.columns
-          .cp-comment-user
-            = image_tag('//placehold.it/50/50')
-        .large-10.columns
-          .cp-comment-content
-            = f.label :comment
-            = f.text_field :comment, :required => true
+%hr
+- if current_user
+  = render "events/forms/comment"
