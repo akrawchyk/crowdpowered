@@ -4,9 +4,6 @@
   .masthead.home
 
 .row.bglite
-  .large-12.columns
-    %h1 Community powered projects
-    = image_tag('//placehold.it/970x200')
   .large-6.columns
     %h2.subheader Help is here!
     %p<
@@ -39,7 +36,9 @@
     .cp-plug
       %div
         %i.fi-key.large
-      %p Be the key to change in your city!
+      %p Be the key to change in your city!      
 .row.bglite
-  .large-12.columns
+  .large-6.columns
     = link_to('Create event', new_event_path, class: ['large', 'button', 'expand'])
+  .large-6.columns
+    = link_to('Find Events', events_path, class: ['large','button','expand'])
