@@ -4,13 +4,27 @@
     %h2 Join the project
     %div.panel
       %p You can help in two ways:
-      %ul
+      %ul.class.disc
         %li Contribute your time and effort to #{@event.name}
         %li contribute money to #{@event.name}
 
 .row.bglite
   .large-12.columns
-    %h2 Place Order
+    %h2 Donate your time
+
+    %p Send the coordinator of this project an email to let them know you are interested. Once you send it, sit tight and they should get back to you very soon.
+
+    %label name
+    %p= text_field :name, required: true
+    %label Email
+    %p= text_field :email, required: true
+    %label message:
+    %p= text_area :text_message, required: true
+    %button contact project coordinator
+
+.row.bglite
+  .large-12.columns
+    %h2 Donate your money
 
     = form_for [@event, @order] do |f|
       - if @event.errors.any?
