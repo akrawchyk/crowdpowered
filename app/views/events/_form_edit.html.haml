@@ -1,5 +1,5 @@
-= form_for @event do |f|
-  = hidden_field :event, :deadline
+= form_for @event, html: { method: :put } do |f|
+  = hidden_field_tag 'event[deadline]', @event.deadline.strftime('%Y-%m-%dT%H:%M:00')
 
   - if @event.errors.any?
     #error_explanation
@@ -15,27 +15,27 @@
     .row
       .large-12.columns
         = f.label :name
-        = f.text_field :name, required: true
+        = f.text_field :name
     .row
       .large-12.columns
         = label_tag :date
-        = date_field_tag :date, nil, class: 'js-pickadate', required: true
+        = date_field_tag :date, @event.deadline.strftime('%-d %B, %Y'), class: 'js-pickadate'
     .row
       .large-12.columns
         = label_tag :time
-        = time_field_tag :time, nil, class: 'js-pickatime', required: true
+        = time_field_tag :time, @event.deadline.strftime('%l:%M %p').lstrip, class: 'js-pickatime'
     .row
       .large-12.columns
         = f.label :zipcode
-        = f.number_field :zipcode, required: true
+        = f.number_field :zipcode
     .row
       .large-12.columns
         = f.label :description
-        = f.text_area :description, required: true
+        = f.text_area :description
     .row
       .large-12.columns
         = f.label :website
         = f.url_field :website
     .row
       .large-12.columns
-        = f.submit 'Create', class: 'button'
+        = f.submit 'Update', class: 'button'
