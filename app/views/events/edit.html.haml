@@ -2,12 +2,12 @@
 
 .row.bglite
   .large-12.columns
-    %h1 Edit #{@event.name}
-    %h3.subheading= @event.description
 
   .large-6.columns
+    %h1 Edit #{@event.name}
     = render 'events/forms/edit'
   .large-6.columns
+    %h2.h1 Edit contributions
     = render 'events/forms/contributions'
 
 .row.bglite

@@ -4,7 +4,7 @@
       %nav{ role: 'navigation' }
         .title-area
           = link_to root_path, class: 'brand' do
-            = image_tag('logo_small.png', alt: 'small logo')
+            = image_tag('logo_small.png', alt: 'small logo') unless current_page?(root_path)
             = I18n::t(:base_title)
         .top-bar-section
           %ul.right

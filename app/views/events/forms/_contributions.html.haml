@@ -1,3 +1,23 @@
 = form_tag @event do |f|
 
   %fieldset
+    %legend Volunteers
+    .row
+      .large-12.columns
+        = label_tag 'Volunteer name'
+        = text_field_tag :volunteer_name
+        = label_tag 'Volunteer email'
+        = email_field_tag :volunteer_email
+        = button_tag 'Add', class: 'button expand small secondary'
+
+  %fieldset
+    %legend Supplies
+    .row
+      .large-12.columns
+        = label_tag 'Item Name'
+        = text_field_tag :item_name
+        = label_tag 'Quantity Needed'
+        = number_field_tag :quantity_needed
+        = label_tag 'Item Price'
+        = number_field_tag :item_price
+        = button_tag 'Add', class: 'button expand small secondary'
