@@ -1,6 +1,10 @@
+- provide(:title, 'User')
+
 .row.bglite
-  .large-12.columns
+  .large-6.columns
     %p#notice= notice
+
+    %h1 My Account
 
     %p
       %b First name:
@@ -23,7 +27,10 @@
     %p
       %b Zipcode:
       = @user.zipcode
-
-    = link_to 'Edit', edit_user_path(@user)
-    \|
-    = link_to 'Back', users_path
+  .large-6.columns
+    %h3 Need to change something?
+    = link_to 'Edit', edit_user_path(@user), class: ['button', 'secondary', 'small']
+.row.bglite
+  .large-12.columns
+    %p
+      = link_to 'Back', users_path

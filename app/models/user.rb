@@ -5,12 +5,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   # Validations
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  validates :first_name, presence: false
+  validates :last_name, presence: false
   #include ActiveModel::Validations
   validates :email, presence: true, :email => true
   validates :phone_number, presence: false
-  validates :zipcode, presence: true
+  validates :zipcode, presence: false
 
   # Plugins/Gems
   acts_as_voter
