@@ -16,7 +16,8 @@ class Payment < PayPal::SDK::REST::Payment
 
   def add_payment_method(order)
     user = order.user
-    if order.payment_method == "credit_card" and user.credit_card_id
+    raise order.credit_card.inspect
+    if order.payment_method == "credit_card" and order.credit_card_id
       self.payer.payment_method = "credit_card"
       self.payer.funding_instruments = {
         :credit_card_token => {
@@ -35,14 +36,17 @@ class Payment < PayPal::SDK::REST::Payment
         :total => order.amount,
         :currency => "USD" },
       :item_list => {
-        :items => { :name => "pizza", :sku => "pizza", :price => order.amount, :currency => "USD", :quantity => 1 }
+        :items => { :name => order.event.name, :sku => "donation", :price => order.amount, :currency => "USD", :quantity => 1 }
       },
       :description => order.description
      }
+
      self.redirect_urls = {
        :return_url => order.return_url.sub(/:order_id/, order.id.to_s),
        :cancel_url => order.cancel_url.sub(/:order_id/, order.id.to_s)
      }
+
+    raise self.inspect
   end
 
 end
