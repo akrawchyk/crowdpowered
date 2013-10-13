@@ -6,7 +6,12 @@
 $fs-headings: roboto_condensedregular, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 
 // colors
+$black: #222;
 $gray: #ccc;
+$gray-darker: darken($gray, 50%);
+$gray-dark: darken($gray, 33.3%);
 $green: #6e9e49;
+$green-pale: #c7e7b1;
 $orange: #f5912c;
+$orange-pale: #f5dbb2;
 $white: #fff;

@@ -1,0 +1,22 @@
+.cp-event-card
+  .cp-event-meta
+    %h1= @event.name
+    %p
+      = time_tag @event.deadline
+  .cp-event-status
+    .row
+      .large-4.columns
+        .cp-event-status-item
+          %h4.title Supporters
+          %div
+            %i.fi-torsos-all.large
+      .large-4.columns
+        .cp-event-status-item
+          %h4.title Supplies
+          %div
+            %i.fi-wrench.large
+      .large-4.columns
+        .cp-event-status-item
+          %h4.title Funds
+          %div
+            %i.fi-dollar.large

@@ -1,0 +1,61 @@
+/**
+ * Events
+ */
+
+.masthead.event {
+  background-image: image-url('event_masthead.png');
+}
+
+.cp-event {
+
+}
+
+.cp-event-status {
+  .columns {
+    background: $orange-pale;
+    border: 1px solid darken($orange-pale, 10%);
+
+    &:first-child,
+    &:last-child {
+      background: $green-pale;
+      border: 1px solid darken($green-pale, 10%);
+    }
+  }
+}
+
+.cp-event-status-item {
+  .title {
+    color: $gray-dark;
+    text-align: center;
+  }
+
+  i {
+    color: $gray-dark;
+  }
+}
+
+.cp-event-cta {
+  background: $green;
+  color: $white;
+  margin-top: 15px;
+
+  .button {
+    float: left;
+    margin: 20px;
+    text-transform: uppercase;
+  }
+}
+
+.cp-event-cta-pitch {
+  padding: 5px;
+}
+
+.cp-event-supporter {
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.cp-event-supplies-list {
+  margin-left: 1em;
+}

@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  base_title: CrowdPowered
   activerecord:
     models:
       event: Event
@@ -30,4 +31,11 @@ en:
     errors:
       messages:
         blank: Field cannot be empty
-  base_title: CrowdPowered
+  date:
+    formats:
+      default: "%e %B, %Y"
+  datetime:
+    formats:
+      default: "%e %B, %Y at %l:%M%p"
+  events:
+    pitch: Support this project by donating time or money to help achieve its goal. You are the key to this project's success!
