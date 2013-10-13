@@ -2,28 +2,30 @@
 
 .row.bglite
   .large-12.columns
+    %h1 Events listing
+    = link_to 'New Event', new_event_path, class: 'button'
+
+- if user_signed_in?
+  .row.bglite
     .large-12.columns
-      %h1 Events listing
-      = link_to 'New Event', new_event_path, class: 'button'
+      %h2 Nearby
+      %ul.large-block-grid-4
+        - @nears.each_with_index do |near, index|
+          %li
+            = link_to(near) do
+              = image_tag("listing_#{index+1}.png")
+              %h4.subheader= near.name
+              %p
+                %i.fi-target-two
+                #{near.distance.round(2)} miles away
 
-    %table
-      %tr
-        %th Name
-        %th Deadline
-        %th Description
-        %th Website
-        %th Properties
-        %th
-        %th
-        %th
+.row.bglite
+  .large-12.columns
+    %h2 All
+    %ul.large-block-grid-4
+      - @events.each_with_index do |event, index|
+        %li
+          = link_to(event) do
+            = image_tag("listing_#{index+1}.png")
+            %h4.subheader= event.name
 
-      - @events.each do |event|
-        %tr
-          %td= event.name
-          %td= event.deadline
-          %td= event.description
-          %td= event.website
-          %td= event.properties
-          %td= link_to 'Show', event
-          %td= link_to 'Edit', edit_event_path(event)
-          %td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }

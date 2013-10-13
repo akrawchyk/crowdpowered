@@ -13,3 +13,5 @@
         = render "call_to_action"
         = render "supporters", :event => @event
         = render "supplies"
+      .large-6.columns
+        = link_to 'Edit', edit_event_path(@event), class: 'button secondary right'
