@@ -4,10 +4,9 @@
   %body{ class: controller.controller_name }
     = render 'header'
 
-    .container
+    .row.bglite
       - flash.each do |name, msg|
-        %div
-          %p{ class: name }= msg
+        %div.flash.alert-box.secondary{ class: name }= msg
 
     = yield
     = render 'footer'

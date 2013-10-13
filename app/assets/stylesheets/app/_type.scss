@@ -2,15 +2,27 @@
  * Type
  */
 
-// Roboto Condensed
+// Roboto Condensed Regular
 @font-face {
-    font-family: 'roboto_condensedregular';
+    font-family: 'roboto_condensed';
     src: url('/roboto_condensed/RobotoCondensed-Regular-webfont.eot');
     src: url('/roboto_condensed/RobotoCondensed-Regular-webfont.eot?#iefix') format('embedded-opentype'),
          url('/roboto_condensed/RobotoCondensed-Regular-webfont.woff') format('woff'),
          url('/roboto_condensed/RobotoCondensed-Regular-webfont.ttf') format('truetype'),
          url('/roboto_condensed/RobotoCondensed-Regular-webfont.svg#roboto_condensedregular') format('svg');
     font-weight: normal;
+    font-style: normal;
+}
+
+// Roboto Condensed Light
+@font-face {
+    font-family: 'roboto_condensed';
+    src: url('/roboto_lightcondensed/RobotoCondensed-Light-webfont.eot');
+    src: url('/roboto_lightcondensed/RobotoCondensed-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/roboto_lightcondensed/RobotoCondensed-Light-webfont.woff') format('woff'),
+         url('/roboto_lightcondensed/RobotoCondensed-Light-webfont.ttf') format('truetype'),
+         url('/roboto_lightcondensed/RobotoCondensed-Light-webfont.svg#roboto_condensedlight') format('svg');
+    font-weight: 300;
     font-style: normal;
 }
 
