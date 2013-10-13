@@ -1,2 +1,6 @@
 .cp-event-supporter
-  = image_tag('//placehold.it/50/50')
+
+  - if @users
+    - @users.each do |user|
+      = image_tag('//placehold.it/50/50')
+      %p= user.first_name

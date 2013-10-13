@@ -1,7 +1,10 @@
 .cp-event-supporters
   %h3.subheader Supporters
 
-  - 16.times do
-    = render "supporter"
+  - if @event.users.count > 0
+    = render 'supporter', :users => @event.users
+  - else
+    %p "Be the first supporter"
 
+  
 
