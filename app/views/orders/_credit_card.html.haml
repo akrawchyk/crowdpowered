@@ -1,0 +1,23 @@
+.row
+  .large-3.columns
+    = f.label :type
+    = f.select :type, [ "visa", "mastercard", "discover", "amex" ]
+  .large-9.columns
+    = f.label :number
+    = f.text_field :number
+
+.row
+  .large-6.columns
+    = f.label :expire_month
+    = f.select :expire_month, "1".."12"
+
+  .large-3.columns
+    = f.label :expire_year
+    = f.select :expire_year,  (Date.today.year..(Date.today.year+10))
+
+  .large-3.columns
+    = f.label :cvv2
+    = f.text_field :cvv2
+
+
+

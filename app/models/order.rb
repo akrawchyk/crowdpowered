@@ -8,7 +8,7 @@ class Order < ActiveRecord::Base
 
   after_create :create_payment
 
-  #attr_accessor :return_url, :cancel_url, :payment_method
+  attr_accessor :return_url, :cancel_url, :payment_method, :credit_card
 
   validate do
     if payment_method == "credit_card" and ( user.credit_card_id.nil? || @credit_card.present? ) and @credit_card.invalid?
@@ -55,5 +55,9 @@ class Order < ActiveRecord::Base
 
   def approve_url
     payment.links.find{|link| link.method == "REDIRECT" }.try(:href)
+  end
+
+  def credit_card
+    @credit_card ||= CreditCard.new
   end
 end

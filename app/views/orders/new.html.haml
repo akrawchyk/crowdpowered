@@ -9,25 +9,35 @@
           %li= msg
   %fieldset
     %legend Donation
-
     .row
       .large-12.columns
         = f.label :amount
-        = f.text_field :amount
+        = f.text_field :amount, :required => true
+    .row
+      .large-12.columns
+        = f.label :description
+        = f.text_field :description, :required => false
+    -#.row
+    -#  .large-12.columns
+    -#    %p
+    -#    - if current_user.credit_card_id
+    -#      = f.select :payment_method, [ :credit_card, :paypal ], :include_blank => false, :hint => "Update your credit card in Profile page"
+    -#    - else
+    -#      = f.select :payment_method, [ :credit_card, :paypal ], :include_blank => false
+    -#.row
+    -#  .large-12.columns
+    -#    - raise @order.inspect
+    -#    = f.fields_for :credit_card, @order.user.credit_card do |cc|
+    -#      = render "users/registrations/credit_card", :f => cc
+  %fieldset
+    %legend Pay with PayPal
+    = link_to('PayPal', '#', class: 'button secondary')
+  %fieldset
+    %legend Pay with credit or debit card
+    .row
+      .large-12.columns
+        = f.fields_for :credit_card, @order.credit_card do |cc|
+          = render "orders/credit_card", :f => cc
 
-    = f.label :description, :required => false
-    .controls
-      %label.checkbox
-        = @order.description
-        -#= f.error :description
-      = f.hidden_field :description
-  -# if current_user.credit_card_id
-    = f.input :payment_method, :as => :select, :collection => [ :credit_card, :paypal ], :include_blank => false, :hint => "Update your credit card in Profile page"
-  -# else
-    = f.input :payment_method, :as => :select, :collection => [ :credit_card, :paypal ], :include_blank => false
-    %legend New Credit Card
-    =   f.fields_for :credit_card, @order.credit_card do |cc|
-      = render "users/registrations/credit_card", :f => cc
-
-  .form-actions
-    =# f.button :submit, "Place Order", :class => "btn btn-primary"
+    .form-actions
+      = submit_tag "Place Order", :class => "btn btn-primary"
