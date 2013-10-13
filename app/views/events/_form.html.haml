@@ -19,11 +19,11 @@
     .row
       .large-12.columns
         = label_tag :date
-        = date_field_tag :date, Date.today.strftime('%e %B, %Y'), class: 'js-pickadate', required: true
+        = date_field_tag :date, nil, class: 'js-pickadate', required: true
     .row
       .large-12.columns
         = label_tag :time
-        = time_field_tag :time, (Time.now + 1.hour).strftime('%l:00 %p').lstrip, class: 'js-pickatime', required: true
+        = time_field_tag :time, nil, class: 'js-pickatime', required: true
     .row
       .large-12.columns
         = f.label :zipcode
