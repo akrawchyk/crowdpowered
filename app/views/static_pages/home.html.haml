@@ -6,6 +6,8 @@
 .row.bglite
   .large-12.columns
     %h1 Community powered projects
+    = image_tag('//placehold.it/970x200')
+  .large-6.columns
     %h2.subheader Be the catalyst!
     %p<
       Recognize a need in your city? With CrowdPowered, you can easily connect
@@ -13,7 +15,7 @@
       area. CrowdPowered makes it easy to coordinate community events in your area
       by helping you delegate its responsibilities. As a coordinator, you can
       invite volunteers to contribute time, supplies, or funds for your cause.
-
+  .large-6.columns
     %h2.subheader Contribute what you can
     %p<
       Are you free next weekend? Give back by volunteering your time at a
@@ -21,22 +23,27 @@
       all events need some support from behind the scenes. Throw a few bucks at a
       cause or lend some supplies to be used at the event. Everyone can contribute
       something!
-
+.row.bglite
   .large-3.columns
-    .cp-feature
-      %i.fi-trees.large
-      Beautify your area!
+    .cp-plug
+      %div
+        %i.fi-mountains.large
+      %p Identify problems, large and small.
   .large-3.columns
-    .cp-feature
-      %i.fi-paint-bucket.large
-      Put fresh coat of paint on it!
+    .cp-plug
+      %div
+        %i.fi-torsos-all.large
+      %p Coordinate and collaborate with volunteers.
   .large-3.columns
-    .cp-feature
-      %i.fi-torsos-all.large
-      Connect with your community!
+    .cp-plug
+      %div
+        %i.fi-trophy.large
+      %p Conquer the challenge together!
   .large-3.columns
-    .cp-feature
-      %i.fi-key.large
-      Be the key to change in your community!
+    .cp-plug
+      %div
+        %i.fi-key.large
+      %p Be the key to change in your city!
+.row.bglite
   .large-12.columns
     = link_to('Create event', new_event_path, class: ['large', 'button', 'expand'])
