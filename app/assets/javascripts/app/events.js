@@ -11,4 +11,13 @@
 
 		$this.find('#event_deadline').val(date + 'T' + time);
 	});
+
+	// map deadline to date & time
+	var $edit = $('.edit_event');
+
+	if ($edit.length) {
+		// initialize date/time picker submit values
+		$('#date').change();
+		$('#time').change();
+	}
 }).call(this, jQuery);

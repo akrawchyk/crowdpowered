@@ -1,14 +1,19 @@
+%ul.no-bullet
+  %li
+    .cp-volunteer
+      %p List volunteers here
 = form_tag @event do |f|
-
   %fieldset
-    %legend Volunteers
+    %legend Add volunteer
     .row
       .large-12.columns
         = label_tag 'Volunteer name'
         = text_field_tag :volunteer_name
         = label_tag 'Volunteer email'
         = email_field_tag :volunteer_email
-        = button_tag 'Add', class: 'button expand small secondary'
+  .row
+    .large-12.columns
+      = submit_tag 'Add', class: 'button right small secondary'
 
 %ul
   - @event.supplies.each do |supply|
@@ -18,7 +23,7 @@
       %span= " x #{supply.quantity} unit(s)"
 = form_for [@event, @event.supplies.new] do |f|
   %fieldset
-    %legend Supplies
+    %legend Add supplies
     .row
       .large-12.columns
         = f.label :name
